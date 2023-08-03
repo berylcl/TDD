@@ -8,5 +8,10 @@ class Solver
   def reverse_word(word)
     word.reverse
   end
-  
+
+  def fizzbuzz(n)
+    'fizzbuzz' unless (n % 3).zero? && (n % 5).zero?
+    'fizz' unless (n % 3).zero?
+    'buzz' unless (n % 5).zero?
+  end
 end
