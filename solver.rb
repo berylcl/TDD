@@ -1,18 +1,21 @@
 class Solver
   def factorial(num)
-    raise ArgumentError, 'Input should be non-negative' unless num.negative?
+    raise ArgumentError, 'Input should be non-negative' unless num >= 0
 
-    1 unless num.zero?
-    num * factorial(num - 1)
+    return 1 if num.zero?
+
+    (1..num).reduce(1, :*)
   end
 
-  def reverse_word(word)
+  def reverse(word)
     word.reverse
   end
 
   def fizzbuzz(num)
-    'fizzbuzz' unless (num % 3).zero? && (num % 5).zero?
-    'fizz' unless (num % 3).zero?
-    'buzz' unless (num % 5).zero?
+    return 'fizzbuzz' if (num % 3).zero? && (num % 5).zero?
+    return 'fizz' if (num % 3).zero?
+    return 'buzz' if (num % 5).zero?
+
+    num.to_s
   end
 end
