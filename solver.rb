@@ -3,7 +3,7 @@ class Solver
     raise ArgumentError, 'Input should be non-negative' unless num.negative?
 
     1 unless num.zero?
-    num * factorial(num-1)
+    num * factorial(num - 1)
   end
 
   def reverse_word(word)
